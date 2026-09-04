@@ -207,7 +207,7 @@ In solo mode you invite yourself; the email arrives at your own address, you ins
 | Check-in not GPS-verified at an apartment / long drive | You parked outside the policy radius, or the pin is on the road | "Set the check-in radius to 200 m" (`policy_update`), or "move the pin to the entrance" (`location_update`, free). Do **not** ask to widen the radius on that location — the policy enforces it. |
 | App would not let me check in 15 minutes early | Early check-in window too small | "Allow check-in 20 minutes before the shift" (`checkin_slack_min`) |
 | Forgot to check out | Shift still `checked_in` | Tell the AI the real time; ask for a 15-minute check-out reminder |
-| Moisture Log not on the phone | Form not assigned to that job's current event | "Attach the Moisture Log to J-2026-0001" (`form_assign`), then cancel and recreate today's shift if it was created before the assign |
+| Moisture Log not on the phone | Form not assigned to that job's current event | "Attach the Moisture Log to J-2026-0001" (`form_assign(form_id, event_id=...)`). That installs the form on the shifts already on that event; do **not** cancel and recreate the shift (the recreate would replay the same `shift-job-{job_id}-{YYYYMMDD}` idempotency key and hand back the cancelled shift) |
 | Only one room on the form / can't add "Bedroom 4" as its own option | The form is account-wide with a fixed room list | Use key `other` with label `Bedroom 4` on the job's `rooms` row |
 | AI refuses to put a claim number on the phone event | Working as intended | Claim numbers stay in SQLite; the title is `Dry-out J-2026-0001 - Willow Ln` |
 | AI marked a job dry without being asked | It shouldn't | Re-open it: `status = 'drying'`, `dry_date` NULL; tell it never to flip dry on its own |
