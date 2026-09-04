@@ -233,16 +233,16 @@ form_submissions:
         data: { room: "kitchen", moisture_pct: 22, meter_type: "pin",
                 notes: "Cabinet toe-kick, still beading." },
         media: [
-          { field: "meter", cdn_url: "https://cdn.zensched.com/m/.../k1.jpg" },
-          { field: "meter", cdn_url: "https://cdn.zensched.com/m/.../k2.jpg" }
+          { field_id: 5, cdn_url: "https://cdn.zensched.com/m/.../k1.jpg" },
+          { field_id: 5, cdn_url: "https://cdn.zensched.com/m/.../k2.jpg" }
         ] },
       { submission_id: 3502, submitted_at: "2026-09-08 09:22:04",
         data: { room: "living_room", moisture_pct: 18, meter_type: "pin" },
-        media: [ { field: "meter", cdn_url: "https://cdn.zensched.com/m/.../l1.jpg" } ] },
+        media: [ { field_id: 5, cdn_url: "https://cdn.zensched.com/m/.../l1.jpg" } ] },
       { submission_id: 3503, submitted_at: "2026-09-08 09:35:40",
         data: { room: "basement", moisture_pct: 28, meter_type: "pinless",
                 notes: "North-east corner, pad still dark." },
-        media: [ { field: "meter", cdn_url: "https://cdn.zensched.com/m/.../b1.jpg" } ] }
+        media: [ { field_id: 5, cdn_url: "https://cdn.zensched.com/m/.../b1.jpg" } ] }
     ], count: 3, billing: { meter: "form_media", units: 3, price: 0.45 }
 
 sqlite_execute:
