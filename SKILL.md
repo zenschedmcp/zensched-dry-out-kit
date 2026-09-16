@@ -75,7 +75,7 @@ form_create:
   {"type": "number", "label": "Moisture %", "identifier": "moisture_pct", "required": true},
   {"type": "select", "label": "Meter type", "identifier": "meter_type", "required": true,
    "options": ["Pin", "Pinless", "Thermo-hygrometer", "Other"]},
-  {"type": "photo", "label": "Meter photo", "identifier": "meter", "max_images": 2},
+  {"type": "photo", "label": "Meter photo", "identifier": "meter", "max_images": 2, "stamp_photos": true},
   {"type": "textarea", "label": "Notes", "identifier": "notes"}
 ]
 ```
